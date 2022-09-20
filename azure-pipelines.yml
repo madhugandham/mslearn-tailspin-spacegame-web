@@ -3,12 +3,14 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-cor
 trigger:
-- '*'
+
+- build-pipeline
+
+
 
 pool:
-  vmImage: 'ubuntu-latest'
-  demands:
-  - npm
+
+  name: 'MyAgentPool'
 
 steps:
 - task: UseDotNet@2
